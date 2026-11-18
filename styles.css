@@ -836,7 +836,7 @@ html.scrollbar-enlarged .scroll-progress-bar {
   position: fixed;
   top: 72px;
   right: 16px;
-  z-index: 1001;
+  z-index: 1005;
   width: 220px;
   border-radius: 24px;
   padding: 10px 8px;
@@ -853,6 +853,14 @@ html.scrollbar-enlarged .scroll-progress-bar {
   transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
               visibility 0.24s;
+}
+
+/* Hide brand logo and name when mobile menu is opened */
+body.mobile-menu-open .nav-brand-link,
+html.mobile-menu-open .nav-brand-link {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 [data-theme="light"] .mobile-menu-card {
@@ -3043,7 +3051,16 @@ body.lightbox-scroll-locked {
     transform: translate3d(0, var(--brand-morph-y, 18vh), 0) scale(var(--brand-morph-scale, 1.75)) !important;
     transform-origin: center center !important;
     will-change: transform, box-shadow !important;
-    transition: box-shadow 0.25s ease !important;
+    transition: box-shadow 0.25s ease, opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+  }
+
+  /* Completely hide PrintPulse logo, name and version when hamburger navbar is opened */
+  body.mobile-menu-open .nav-brand-link,
+  html.mobile-menu-open .nav-brand-link {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate3d(0, var(--brand-morph-y, 18vh), 0) scale(0.7) !important;
   }
 
   [data-theme="dark"] .nav-brand-link {
@@ -3101,7 +3118,7 @@ body.lightbox-scroll-locked {
     padding: 0 !important;
     transition: all var(--transition-fast) !important;
     position: relative !important;
-    z-index: 1002 !important;
+    z-index: 1006 !important;
   }
 
   [data-theme="dark"] .nav-mobile-toggle {

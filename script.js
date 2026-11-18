@@ -636,6 +636,8 @@ function initMobileMenu() {
     menuCard.classList.add('open');
     backdrop.classList.add('open');
     toggleBtn.classList.add('active');
+    document.body.classList.add('mobile-menu-open');
+    document.documentElement.classList.add('mobile-menu-open');
     document.body.style.overflow = 'hidden';
   }
 
@@ -643,6 +645,8 @@ function initMobileMenu() {
     menuCard.classList.remove('open');
     backdrop.classList.remove('open');
     toggleBtn.classList.remove('active');
+    document.body.classList.remove('mobile-menu-open');
+    document.documentElement.classList.remove('mobile-menu-open');
     document.body.style.overflow = '';
   }
 
@@ -685,6 +689,13 @@ function initMobileMenu() {
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuCard.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  // Automatically close mobile menu if resized back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && menuCard.classList.contains('open')) {
       closeMenu();
     }
   });
