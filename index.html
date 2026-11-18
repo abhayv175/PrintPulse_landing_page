@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrintPulse — Zero-Friction Modern Print-on-Demand Infrastructure</title>
+  
+  <!-- SEO & OpenGraph Meta -->
+  <meta name="description" content="Next-generation cloud-synchronized print ecosystem eliminating pen drives, cables, and kiosk queues. Instant web uploads, zero-fee direct UPI, and sub-50ms push spooling to vendor Android terminals.">
+  <meta name="author" content="Abhay Verma">
+  <meta property="og:title" content="PrintPulse — Zero-Friction Modern Print-on-Demand Infrastructure">
+  <meta property="og:description" content="Instant web uploads, zero-install customer portal, direct zero-fee UPI settlement, and sub-50ms push spooling to Android tablets.">
+  <meta property="og:image" content="assets/screenshots/02_portal_active_order_desktop.png">
+  <meta property="og:url" content="https://jh0yc.aiccloud.online">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/brand/favicon.png">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Prevent flash of unstyled theme -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('printpulse_theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dynamic Scroll Progress Bar (Enlarges relatively on hover / click / scroll) -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       1. Floating Glassmorphic Navbar (Streamlined & Breathable)
+       ========================================================================= -->
+  <div class="nav-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      
+      <!-- Brand Logo (Click moves scroll to Home) with v1.0.0 directly under -->
+      <a href="#hero" class="nav-brand-link" id="nav-brand-link" aria-label="PrintPulse Home">
+        <div class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">PrintPulse</span>
+          <span class="brand-version">v1.0.0</span>
+        </div>
+      </a>
+
+      <!-- Streamlined 5 Links with Translucent Sliding Pill Indicator -->
+      <div class="nav-links" id="nav-links">
+        <div class="nav-pill-indicator" id="nav-pill-indicator"></div>
+        <a href="#features" class="nav-link" data-section="features">Features</a>
+        <a href="#how-it-works" class="nav-link" data-section="how-it-works">Workflow</a>
+        <a href="#calculator" class="nav-link" data-section="calculator">Calculator</a>
+        <a href="#screenshots" class="nav-link" data-section="screenshots">Showcase</a>
+        <a href="#architecture" class="nav-link" data-section="architecture">Architecture</a>
+      </div>
+
+      <!-- Actions: Theme Toggle, GitHub, Launch CTA -->
+      <div class="nav-actions">
+        <!-- Light / Dark Mode Toggle Button with crisp inline SVGs -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Dark / Light Theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="btn-github" title="View Source on GitHub">
+          <i data-lucide="github"></i>
+          <span class="btn-github-text">GitHub</span>
+        </a>
+        <a href="https://jh0yc.aiccloud.online/shop/abhayv175" target="_blank" rel="noopener noreferrer" class="btn-primary-nav">
+          <span>Launch Live Portal</span>
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+
+      <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation menu">
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Translucent Mobile Dropdown Menu (Image 1 replica) -->
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu-card" id="mobile-menu-card" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-menu-list">
+      <a href="#hero" class="mobile-menu-item active" data-section="hero">
+        <span>Home</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#features" class="mobile-menu-item" data-section="features">
+        <span>Features</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#how-it-works" class="mobile-menu-item" data-section="how-it-works">
+        <span>Workflow</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#calculator" class="mobile-menu-item" data-section="calculator">
+        <span>Calculator</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#screenshots" class="mobile-menu-item" data-section="screenshots">
+        <span>Showcase</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#architecture" class="mobile-menu-item" data-section="architecture">
+        <span>Architecture</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#api" class="mobile-menu-item" data-section="api">
+        <span>API Docs</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#faq" class="mobile-menu-item" data-section="faq">
+        <span>FAQ</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="mobile-menu-divider"></div>
+    <div class="mobile-menu-footer">
+      <a href="https://jh0yc.aiccloud.online/shop/abhayv175" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="width: 100%; justify-content: center; padding: 10px 16px; font-size: 0.88rem; border-radius: 14px;">
+        <span>Launch Live Portal</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Hero Section
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        
+        <!-- Translucent Hero Pill with Dynamic Latency Jitter -->
+        <div class="hero-pill-badge" id="hero-status-pill">
+          <span class="status-dot"></span>
+          <span class="badge-text-full">Live Cloud Production</span>
+          <span class="badge-text-mobile">Live Cloud</span>
+          <span class="pill-divider">•</span>
+          <span class="dynamic-ping"><i data-lucide="activity" style="width: 12px; height: 12px; vertical-align: middle;"></i> WebSocket: <span id="live-ping-val">28ms</span></span>
+          <span class="pill-divider pill-divider-extra">•</span>
+          <span class="pill-highlight badge-extra-full">0% UPI Gateway Fee</span>
+          <span class="pill-highlight badge-extra-mobile">0% Fee</span>
+        </div>
+
+        <h1 class="hero-title">
+          Zero-Friction Modern <br class="desktop-only">
+          <span class="text-gradient-purple">Print-on-Demand</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Eliminate pen drive malware, messy cables, and kiosk queues. Customers scan a desk QR to upload in-browser, settle directly via zero-fee UPI, and jobs auto-spool to vendor Android hardware in sub-50 milliseconds.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://jh0yc.aiccloud.online/shop/abhayv175" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+            <i data-lucide="sparkles"></i>
+            <span>Try Live Customer Portal</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="https://github.com/abhayv175/PrintPulse/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
+            <i data-lucide="smartphone"></i>
+            <span>Download Vendor APK</span>
+          </a>
+          <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="btn-hero-tertiary">
+            <i data-lucide="github"></i>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+
+        <!-- Clean, Pristine Hero Showcase (No messy overlapping phones!) -->
+        <div class="hero-stage-wrapper">
+          <div class="hero-glow-backdrop"></div>
+
+          <!-- Main Desktop Browser Frame -->
+          <div class="browser-frame hero-main-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-address-bar">
+                <i data-lucide="lock"></i>
+                <span>https://jh0yc.aiccloud.online/shop/abhayv175</span>
+              </div>
+              <div style="font-size: 0.72rem; color: var(--brand-emerald); font-family: var(--font-mono); font-weight: 600;">
+                ● 200 OK
+              </div>
+            </div>
+            <div class="browser-content" style="cursor: pointer;" onclick="openLightbox('assets/screenshots/02_portal_active_order_desktop.png', 'Customer Web Portal — Active Order Configuration', 'Real-time multi-file queue, automated page count detection (12 pages B&W @ ₹2.00 = ₹24.00), orientation toggles, canvas sheet preview, and privacy auto-delete toggle.')">
+              <img src="assets/screenshots/02_portal_active_order_desktop.png" alt="PrintPulse Live Desktop Customer Web Portal with Active Multi-Document Order" loading="eager" width="1040" height="580">
+              <div class="frame-zoom-hint">
+                <i data-lucide="zoom-in"></i> Click to Inspect Fullscreen
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini Device Strip: Highlights Customer Portal & Vendor Terminal side-by-side cleanly below -->
+          <div class="hero-device-pills-row">
+            <div class="device-pill" onclick="openLightbox('assets/screenshots/03_portal_active_order_mobile.png', 'Customer Mobile Portal', 'Zero-install mobile web ingress with instant page detection and pricing.')">
+              <i data-lucide="smartphone" style="width: 14px; height: 14px; color: var(--brand-purple-light);"></i>
+              <span>Customer Mobile View</span>
+            </div>
+            <div class="device-pill" onclick="openLightbox('assets/screenshots/vendor_03_dashboard_home.jpg', 'Vendor Kiosk Dashboard', 'Native Flutter counter terminal with connected printer status.')">
+              <i data-lucide="tablet" style="width: 14px; height: 14px; color: var(--brand-emerald);"></i>
+              <span>Vendor Kiosk Dashboard</span>
+            </div>
+            <div class="device-pill" onclick="openLightbox('assets/screenshots/vendor_04_counter_qr_modal.jpg', 'Desk Counter QR Stand', 'Dynamic walk-in counter QR modal for zero-install customer access.')">
+              <i data-lucide="qr-code" style="width: 14px; height: 14px; color: #38bdf8;"></i>
+              <span>Counter Desk QR</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. Key Performance & Architecture Metrics Strip
+         ========================================================================= -->
+    <section class="metrics-section" aria-label="System Performance Metrics">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number text-gradient-purple">&lt; 50ms</div>
+            <div class="metric-label">Duplex WebSocket Push Latency</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient-purple">0% MDR</div>
+            <div class="metric-label">Payment Gateway Commission Fees</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient-purple">0 Installs</div>
+            <div class="metric-label">Required for Walk-in Customers</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient-purple">&lt; 20ms</div>
+            <div class="metric-label">Automated PDF Inspection &amp; Pricing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. The PrintPulse Difference: Side-by-Side Comparison
+         ========================================================================= -->
+    <section class="comparison-section" id="comparison">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="scale"></i>
+            <span>Pain Points Solved</span>
+          </div>
+          <h2 class="section-title">Traditional Printing vs. PrintPulse</h2>
+          <p class="section-desc">
+            Directly addressing the operational bottlenecks that plague commercial print shops, stationery stores, copy centers, and busy retail counters.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table" aria-label="Comparison between Traditional Printing and PrintPulse Solution">
+            <thead>
+              <tr>
+                <th scope="col" class="th-traditional">
+                  <i data-lucide="alert-triangle" style="width: 18px; height: 18px; color: #f87171; vertical-align: middle;"></i>
+                  <span>Traditional Print Shops &amp; Kiosks</span>
+                </th>
+                <th scope="col" class="th-printpulse">
+                  <i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--brand-emerald); vertical-align: middle;"></i>
+                  <span>The PrintPulse Architecture</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong class="comp-hazard">Pen Drive Malware:</strong> Customers plug infected USB sticks into counter PCs, causing virus spreads, OS corruption, and counter downtime.
+                </td>
+                <td>
+                  <strong class="comp-solution">Zero Hardware Ingress:</strong> 100% cloud streaming via HTTPS/WSS directly to memory and spooler. No USB sticks or Bluetooth pairing ever touch vendor PCs.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="comp-hazard">Manual Billing Friction:</strong> Shopkeepers manually scroll through PDFs to count pages, verify color pages, and calculate cash totals.
+                </td>
+                <td>
+                  <strong class="comp-solution">Automated Page Calculation:</strong> Asynchronous <code class="code-tag">pypdf</code> stream analyzer + client-side PDF.js calculates exact rates in <code class="code-tag">&lt; 20ms</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="comp-hazard">Gateway Fees (2–3% MDR):</strong> Payment gateways like Razorpay or Stripe extract 2%–3% + 18% GST on micro-payments, eroding vendor margins.
+                </td>
+                <td>
+                  <strong class="comp-solution">Zero-Fee Direct NPCI UPI:</strong> Dynamic UPI QR deep-links settle directly into the vendor's bank VPA with <strong>0% intermediary fees</strong>.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="comp-hazard">Kiosk Clutter &amp; App Fatigue:</strong> Requiring walk-in customers to download an app or sign up kills conversion and creates long queues.
+                </td>
+                <td>
+                  <strong class="comp-solution">Zero-Install Web Portal:</strong> Customers point phone camera at the desk QR and order mounts in mobile Safari/Chrome with 0 app installs.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong class="comp-hazard">Missed Orders &amp; Stale Queues:</strong> Manual browser refreshes or periodic polling lead to delayed print jobs and customer frustration.
+                </td>
+                <td>
+                  <strong class="comp-solution">Duplex WebSocket Relay:</strong> Sub-50ms bi-directional push from cloud backend to Android tablet with audible <code class="code-tag">new_job.mp3</code> chime.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. Bento Grid Feature Breakdown with Real Screenshots
+         ========================================================================= -->
+    <section class="bento-section" id="features">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="layers"></i>
+            <span>Engineered for Reliability</span>
+          </div>
+          <h2 class="section-title">Built for High-Volume Print Counters</h2>
+          <p class="section-desc">
+            A distributed architecture pairing ultra-light client-side web inspection with asynchronous Python 3.12 pipelines and Android hardware spooling.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Card 1: Zero-Install QR Ingress (Wide, 2-Column Desktop) -->
+          <div class="bento-card wide bento-card-split">
+            <div class="bento-card-left">
+              <div class="bento-icon-wrapper">
+                <i data-lucide="qr-code"></i>
+              </div>
+              <h3 class="bento-title">Zero-Install QR Ingress &amp; Instant PDF Inspection</h3>
+              <p class="bento-desc">
+                Walk-in visitors never install an app or create an account. Scanning the physical counter QR instantly loads the web portal, where client-side PDF.js inspects page counts, color modes, and pricing in less than 20 milliseconds.
+              </p>
+              <div class="bento-highlight-pill">
+                <span class="status-dot"></span>
+                <span>Automated page detection: 12 pgs @ ₹2.00 = ₹24.00</span>
+              </div>
+            </div>
+            <div class="bento-card-right">
+              <div class="bento-framed-preview" onclick="openLightbox('assets/screenshots/02_portal_active_order_desktop.png', 'Customer Web Portal Desktop Active Order', 'Full document queue preview with page detection and cost calculation.')">
+                <img src="assets/screenshots/02_portal_active_order_desktop.png" alt="Desktop Web Portal Active Order Configuration" loading="lazy">
+                <div class="bento-zoom-overlay"><i data-lucide="zoom-in"></i> Inspect View</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Duplex WebSocket Relay with Live Audio Preview -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <i data-lucide="radio"></i>
+              </div>
+              <h3 class="bento-title">Sub-50ms Duplex Push</h3>
+              <p class="bento-desc">
+                No manual refreshing. When a customer submits an order or claims a UPI UTR, a persistent WebSocket immediately chimes the vendor's Android tablet with <code class="code-tag">new_job.mp3</code>.
+              </p>
+              
+              <!-- Dynamic Sound Preview Button -->
+              <div style="margin-top: 16px;">
+                <button type="button" class="btn-sound-preview" onclick="playNotificationChime(event)">
+                  <i data-lucide="volume-2" class="sound-icon"></i>
+                  <span>Test Audio Chime</span>
+                  <span class="sound-waves"><span></span><span></span><span></span></span>
+                </button>
+              </div>
+            </div>
+            <div class="bento-phone-preview" onclick="openLightbox('assets/screenshots/vendor_05_live_queue.jpg', 'Vendor Terminal — Live Order Queue', 'Real-time WebSocket stream queue displaying incoming customer print jobs.')">
+              <img src="assets/screenshots/vendor_05_live_queue.jpg" alt="Vendor Terminal Live Queue" loading="lazy">
+              <div class="bento-zoom-overlay"><i data-lucide="zoom-in"></i> Live Queue</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Direct NPCI UPI Settlement -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <i data-lucide="wallet"></i>
+              </div>
+              <h3 class="bento-title">Direct NPCI UPI (0% Fee)</h3>
+              <p class="bento-desc">
+                Generates dynamic UPI QR codes and one-tap deep-links (<code class="code-tag">upi://pay</code>) for GPay, PhonePe, and Paytm. Settlement lands directly in the vendor's bank account with zero middleman deductions.
+              </p>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 12px;">
+                upi://pay?pa=vendor@upi&amp;am=24.00
+              </div>
+            </div>
+            <div class="bento-phone-preview" onclick="openLightbox('assets/screenshots/04_portal_upi_qr_modal_mobile.png', 'NPCI Direct UPI QR Modal', 'Dynamic QR code generated with vendor VPA and order amount, plus UTR claim field.')">
+              <img src="assets/screenshots/04_portal_upi_qr_modal_mobile.png" alt="NPCI UPI QR Modal" loading="lazy">
+              <div class="bento-zoom-overlay"><i data-lucide="zoom-in"></i> Inspect QR</div>
+            </div>
+          </div>
+
+          <!-- Card 4: Hardware Spool Preferences & Auto-Purge (Wide, 2-Column Desktop) -->
+          <div class="bento-card wide bento-card-split">
+            <div class="bento-card-left">
+              <div class="bento-icon-wrapper">
+                <i data-lucide="printer"></i>
+              </div>
+              <h3 class="bento-title">Hardware Spool Preferences &amp; Privacy Auto-Purge</h3>
+              <p class="bento-desc">
+                Tapping <strong>VERIFY &amp; PRINT</strong> validates the payment claim with the cloud backend, fetches sanitized PDF bytes, and triggers Android's native hardware print spooler via <code class="code-tag">Printing.layoutPdf()</code>. Once spooled, customer documents are automatically shredded from server storage.
+              </p>
+              <div style="margin-top: 14px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="shield-check" style="width: 16px; height: 16px; color: var(--brand-emerald);"></i>
+                <span>Strict Tenant Storage: /uploads/{vendor_id}/ → Auto-Purge Triggered</span>
+              </div>
+            </div>
+            <div class="bento-card-right">
+              <div class="bento-phone-preview" onclick="openLightbox('assets/screenshots/vendor_09_profile_spooler.jpg', 'Hardware Spool Preferences', 'Configures default printer status, A4 standard format, and auto-spool toggle for verified jobs.')">
+                <img src="assets/screenshots/vendor_09_profile_spooler.jpg" alt="Printer Spool Preferences Screen" loading="lazy">
+                <div class="bento-zoom-overlay"><i data-lucide="zoom-in"></i> Inspect Settings</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. How It Works (3-Step Interactive Workflow)
+         ========================================================================= -->
+    <section class="workflow-section" id="how-it-works">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="git-merge"></i>
+            <span>End-to-End Pipeline</span>
+          </div>
+          <h2 class="section-title">How PrintPulse Works in 3 Steps</h2>
+          <p class="section-desc">
+            Designed to save 3 to 5 minutes per customer interaction while keeping counter kiosks clean, paperless, and malware-free.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          
+          <div class="step-card">
+            <div>
+              <div class="step-number">01</div>
+              <div class="step-icon-bubble">
+                <i data-lucide="camera"></i>
+              </div>
+              <h3 class="step-title">Scan &amp; Upload</h3>
+              <p class="step-text">
+                The customer points their smartphone camera at the desk counter QR code. The web portal loads instantly in mobile Safari or Chrome. Drag &amp; drop multiple PDFs or photos with instant page detection.
+              </p>
+            </div>
+            <div class="step-framed-preview" onclick="openLightbox('assets/screenshots/03_portal_active_order_mobile.png', 'Step 1: Scan & Upload', 'Zero-install customer upload screen with live page detection.')">
+              <img src="assets/screenshots/03_portal_active_order_mobile.png" alt="Step 1: Customer Mobile Web Portal" loading="lazy">
+              <div class="step-zoom-hint"><i data-lucide="zoom-in"></i> View Screen</div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-number">02</div>
+              <div class="step-icon-bubble">
+                <i data-lucide="credit-card"></i>
+              </div>
+              <h3 class="step-title">Pay via Direct UPI</h3>
+              <p class="step-text">
+                The portal calculates exact pricing (B&amp;W @ ₹2/pg, Color @ ₹10/pg) and opens the dynamic UPI QR code. The customer taps GPay or PhonePe to pay and submits their 12-digit UTR confirmation claim.
+              </p>
+            </div>
+            <div class="step-framed-preview" onclick="openLightbox('assets/screenshots/04_portal_upi_qr_modal_mobile.png', 'Step 2: Pay via Direct UPI', 'NPCI UPI QR Modal with GPay, PhonePe, Paytm deep-links and UTR claim input.')">
+              <img src="assets/screenshots/04_portal_upi_qr_modal_mobile.png" alt="Step 2: NPCI UPI QR Modal" loading="lazy">
+              <div class="step-zoom-hint"><i data-lucide="zoom-in"></i> View QR Modal</div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div>
+              <div class="step-number">03</div>
+              <div class="step-icon-bubble">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3 class="step-title">Instant Print Spooling</h3>
+              <p class="step-text">
+                The vendor's Android tablet chimes with <code class="code-tag">new_job.mp3</code>. The shopkeeper confirms the UTR, taps <strong>VERIFY &amp; PRINT</strong>, and the job spools directly to Wi-Fi/USB printers.
+              </p>
+            </div>
+            <div class="step-framed-preview" onclick="openLightbox('assets/screenshots/vendor_03_dashboard_home.jpg', 'Step 3: Instant Print Spooling', 'Vendor kiosk dashboard showing connected printer ready status and counter QR button.')">
+              <img src="assets/screenshots/vendor_03_dashboard_home.jpg" alt="Step 3: Vendor Dashboard Ready" loading="lazy">
+              <div class="step-zoom-hint"><i data-lucide="zoom-in"></i> View Dashboard</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. Interactive Savings & Revenue Calculator (Now after Workflow)
+         ========================================================================= -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="calculator"></i>
+            <span>Direct Vendor Economics</span>
+          </div>
+          <h2 class="section-title">Zero Gateway Fees. Pure Margin.</h2>
+          <p class="section-desc">
+            Traditional gateways like Razorpay or Stripe extract 2%–3% + 18% GST on every micro-transaction. PrintPulse routes payments directly to your UPI VPA with zero intermediaries.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-controls">
+            
+            <!-- Quick Preset Chips -->
+            <div class="calc-presets-row">
+              <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Quick Presets:</span>
+              <button type="button" class="calc-preset-chip" onclick="applyCalcPreset(150, 'mostly-bw')">150 pgs / day</button>
+              <button type="button" class="calc-preset-chip active" onclick="applyCalcPreset(300, 'mostly-bw')">300 pgs / day</button>
+              <button type="button" class="calc-preset-chip" onclick="applyCalcPreset(800, 'balanced')">800 pgs / day</button>
+            </div>
+
+            <div class="calc-group">
+              <div class="calc-label-row">
+                <label for="calc-pages-slider" class="calc-label">Daily Print Volume</label>
+                <span id="calc-pages-val" class="calc-value-pill">300 pages / day</span>
+              </div>
+              <input type="range" id="calc-pages-slider" class="calc-range" min="50" max="2000" step="25" value="300" aria-label="Daily Print Volume Slider">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
+                <span>50 pgs</span>
+                <span>1,000 pgs</span>
+                <span>2,000 pgs</span>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <span class="calc-label">Print Mix Ratio</span>
+              <div class="calc-toggle-row">
+                <button type="button" class="calc-toggle-btn active" data-ratio="mostly-bw">85% B&amp;W • 15% Color</button>
+                <button type="button" class="calc-toggle-btn" data-ratio="all-bw">100% B&amp;W (₹2/pg)</button>
+                <button type="button" class="calc-toggle-btn" data-ratio="balanced">50% B&amp;W • 50% Color</button>
+              </div>
+            </div>
+
+            <div class="calc-info-box">
+              <i data-lucide="info" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; color: var(--brand-purple-light);"></i>
+              Calculated using verified production benchmarks: <strong>₹2.00/page (B&amp;W)</strong> and <strong>₹10.00/page (Color)</strong>, synced live from vendor kiosk profile.
+            </div>
+
+          </div>
+
+          <div class="calc-results-panel">
+            <div class="calc-result-header">Financial Impact Projection</div>
+
+            <div class="calc-highlight-box">
+              <div class="calc-highlight-label">Annual Vendor Money Saved</div>
+              <div id="calc-savings-highlight" class="calc-highlight-number text-gradient-purple">₹28,214</div>
+              <div style="font-size: 0.75rem; color: var(--brand-emerald); margin-top: 4px;">100% retained by shopkeeper</div>
+            </div>
+
+            <div class="calc-breakdown-list">
+              <div class="calc-breakdown-row">
+                <span>Estimated Daily Gross:</span>
+                <span id="calc-daily-rev">₹960</span>
+              </div>
+              <div class="calc-breakdown-row">
+                <span>Estimated Monthly Gross:</span>
+                <span id="calc-monthly-rev">₹28,800</span>
+              </div>
+              <div class="calc-breakdown-row">
+                <span>Lost to Traditional Gateways (2.95%):</span>
+                <span id="calc-annual-loss" style="color: #f87171;">₹28,214 / yr</span>
+              </div>
+              <div class="calc-breakdown-row" style="border-top: 1px dashed var(--border-subtle); padding-top: 8px;">
+                <span>PrintPulse Platform Fee:</span>
+                <span style="color: var(--brand-emerald);">₹0.00 (Zero MDR)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. Desktop & Mobile Screenshot Gallery (18 Authentic Production Screenshots)
+         ========================================================================= -->
+    <section class="gallery-section" id="screenshots">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="image"></i>
+            <span>Real Production UI</span>
+          </div>
+          <h2 class="section-title">Authentic Product Showcase</h2>
+          <p class="section-desc">
+            Explore 18 real screenshots captured directly from the live cloud web portal and native Flutter vendor Android kiosk application. Click any image to inspect in full resolution.
+          </p>
+        </div>
+
+        <div class="gallery-tabs">
+          <button type="button" class="gallery-tab-btn active" data-tab="tab-web">
+            <i data-lucide="globe"></i>
+            <span>Customer Web Experience (6)</span>
+          </button>
+          <button type="button" class="gallery-tab-btn" data-tab="tab-vendor">
+            <i data-lucide="tablet"></i>
+            <span>Vendor Kiosk Terminal (6)</span>
+          </button>
+          <button type="button" class="gallery-tab-btn" data-tab="tab-settings">
+            <i data-lucide="settings"></i>
+            <span>Kiosk Settings &amp; Hardware (6)</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Customer Web Experience -->
+        <div class="gallery-pane active" id="tab-web">
+          <div class="gallery-cards-grid">
+            
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/02_portal_active_order_desktop.png', 'Desktop Web Portal — Active Multi-Document Order', 'Automated page detection (12 pages B&W @ ₹2.00 = ₹24.00), orientation toggles, canvas sheet preview, privacy auto-delete switch, and checkout trigger.')">
+              <div class="gallery-img-container desktop">
+                <img src="assets/screenshots/02_portal_active_order_desktop.png" alt="Desktop Web Portal Active Order Configuration" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Desktop View</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Desktop Web</span>
+                <h4 class="gallery-title">Desktop Active Order Queue</h4>
+                <p class="gallery-desc">Multi-document batch queue with page counting, orientation, and cost estimation.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/01_portal_empty_desktop.png', 'Desktop Web Portal — Zero-Install Dropzone', 'Initial state loaded by scanning counter QR code. Clean drag-and-drop dropzone with shopkeeper brand banner and live pricing rates.')">
+              <div class="gallery-img-container desktop">
+                <img src="assets/screenshots/01_portal_empty_desktop.png" alt="Desktop Web Portal Empty Dropzone" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Dropzone</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Desktop Web</span>
+                <h4 class="gallery-title">Zero-Install Web Dropzone</h4>
+                <p class="gallery-desc">Fast, frictionless upload interface with vendor branding and rate preview.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/03_portal_active_order_mobile.png', 'Mobile Customer Portal — Order Configuration', 'Optimized for smartphone viewports. Instant PDF page count calculation, grayscale vs color toggles, and total price breakdown.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/03_portal_active_order_mobile.png" alt="Mobile Active Order Configuration" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Mobile Config</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Mobile Web</span>
+                <h4 class="gallery-title">Mobile Document Configuration</h4>
+                <p class="gallery-desc">Touch-friendly sheet preview, B&W vs color rates, and instant pricing calculation.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/04_portal_upi_qr_modal_mobile.png', 'NPCI Direct UPI QR Modal', 'Dynamic QR code generated with vendor VPA and order amount. Supports GPay/PhonePe/Paytm intents and UTR claim entry.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/04_portal_upi_qr_modal_mobile.png" alt="NPCI UPI QR Modal" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect UPI Modal</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Payment Flow</span>
+                <h4 class="gallery-title">Zero-Fee NPCI UPI QR Modal</h4>
+                <p class="gallery-desc">Dynamic QR code with one-tap UPI app intents and 12-digit UTR claim submission.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/04_portal_checkout_modal_mobile.png', 'Mobile Checkout & Privacy Auto-Delete', 'Final checkout summary displaying document totals, paper sizing, and privacy auto-delete toggle to automatically shred files after printing.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/04_portal_checkout_modal_mobile.png" alt="Checkout Summary Modal" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Checkout</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Privacy & Security</span>
+                <h4 class="gallery-title">Checkout &amp; Auto-Delete</h4>
+                <p class="gallery-desc">Confirms total pages and offers auto-delete to wipe files from disk once printed.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/04_portal_payment_modal_mobile.png', 'Mobile Payment Method Selection', 'Allows walk-in customer to select between instant UPI QR scan, one-tap mobile UPI intent, or cash settlement at counter.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/04_portal_payment_modal_mobile.png" alt="Payment Selection Modal" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Payment</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Payment Flow</span>
+                <h4 class="gallery-title">Payment Selection Modal</h4>
+                <p class="gallery-desc">Frictionless settlement selector with instant deep-link activation.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Vendor Kiosk Terminal -->
+        <div class="gallery-pane" id="tab-vendor">
+          <div class="gallery-cards-grid">
+            
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_03_dashboard_home.jpg', 'Vendor Kiosk Dashboard', 'Main counter terminal view. Connected printer status (Ready), today jobs printed counter, session revenue total, and quick Counter QR trigger.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_03_dashboard_home.jpg" alt="Vendor Dashboard Home" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Dashboard</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Vendor Client</span>
+                <h4 class="gallery-title">Kiosk Dashboard Home</h4>
+                <p class="gallery-desc">Live printer hardware status, daily print stats, and session earnings overview.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_04_counter_qr_modal.jpg', 'Desk Counter QR Modal', 'Dynamic QR code modal displayed on the counter for walk-in customer scans. Supports one-tap Save to Device Gallery.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_04_counter_qr_modal.jpg" alt="Counter QR Modal" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Counter QR</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Counter Stand</span>
+                <h4 class="gallery-title">Desk Counter QR Modal</h4>
+                <p class="gallery-desc">Displays vendor shop QR for customers to scan, with high-res export to gallery.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_05_live_queue.jpg', 'Live WebSocket Order Queue', 'Persistent bi-directional WebSocket listener (/ws/vendor/{id}). Instant audio pulse chime on incoming customer orders.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_05_live_queue.jpg" alt="Live Print Queue" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Live Queue</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Real-Time Sync</span>
+                <h4 class="gallery-title">Live WebSocket Queue</h4>
+                <p class="gallery-desc">Sub-50ms push spooler with empty state, badge counter, and audio chimes.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_06_order_history.jpg', 'Settled Order History & Data Purge', 'Comprehensive archive of all settled orders with search by UPI name/Order ID and one-tap Delete All History for complete privacy.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_06_order_history.jpg" alt="Order History Screen" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect History</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Accounting</span>
+                <h4 class="gallery-title">Order History &amp; Purge</h4>
+                <p class="gallery-desc">Tracks total settled revenue, completed prints, and permanent history deletion.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_01_login.jpg', 'Vendor Login Screen', 'Minimalist authentication screen featuring one-tap Google Sign-In with dynamic vendor ID resolution.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_01_login.jpg" alt="Vendor App Login" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Login</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Authentication</span>
+                <h4 class="gallery-title">One-Tap Google Login</h4>
+                <p class="gallery-desc">Clean authentication interface with branding and dynamic vendor credential retrieval.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_02_google_auth.jpg', 'Native Android Google Account Chooser', 'Secure OAuth account chooser bottom sheet integrating Android native biometric and Google account picker.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_02_google_auth.jpg" alt="Google Auth Account Selection" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Google Auth</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Authentication</span>
+                <h4 class="gallery-title">Native Google Auth Sheet</h4>
+                <p class="gallery-desc">Frictionless account selection integrating Android native credentials.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 3: Kiosk Settings & Hardware -->
+        <div class="gallery-pane" id="tab-settings">
+          <div class="gallery-cards-grid">
+            
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_07_profile_collapsed.jpg', 'Kiosk Settings — In-Place Accordion Profile', 'Streamlined vendor configuration with clean collapsed accordion sections for shop details, UPI management, spool preferences, theme, and pricing.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_07_profile_collapsed.jpg" alt="Profile Accordions Collapsed" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Accordions</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Kiosk Settings</span>
+                <h4 class="gallery-title">Accordion Settings Menu</h4>
+                <p class="gallery-desc">All kiosk configuration categories cleanly organized in responsive accordions.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_08_profile_upi.jpg', 'Zero-Fee Direct Bank UPI Management', 'Vendor enters their UPI VPA (e.g. shop@okaxis). Customer payments settle 100% direct with 0% intermediary platform cuts.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_08_profile_upi.jpg" alt="UPI ID Settings" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect UPI Settings</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Payments</span>
+                <h4 class="gallery-title">Direct Bank UPI Management</h4>
+                <p class="gallery-desc">Configures the recipient VPA used for generating dynamic NPCI payment links.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_08b_profile_shop_details.jpg', 'Shop & Vendor Metadata', 'Displays shop name, verified vendor ID, registered email, and one-tap copy button for customer web portal URL.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_08b_profile_shop_details.jpg" alt="Shop & Vendor Details" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Shop Details</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Store Identity</span>
+                <h4 class="gallery-title">Shop &amp; Portal Details</h4>
+                <p class="gallery-desc">Displays vendor identity, contact email, and one-tap customer portal link copy.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_09_profile_spooler.jpg', 'Printer & Hardware Spool Preferences', 'Shows connected printer status (Ready), A4 standard paper sizing (210 x 297 mm), and auto-spool toggle for verified print jobs.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_09_profile_spooler.jpg" alt="Printer Spool Preferences" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Spooler</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Hardware Execution</span>
+                <h4 class="gallery-title">Printer &amp; Spool Preferences</h4>
+                <p class="gallery-desc">Configures printer connectivity, default paper size, and automated job dispatching.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_11_profile_pricing.jpg', 'Live Pricing Matrix Configuration', 'Vendor customizes per-page B&W rate (₹2.00) and Color rate (₹10.00). Changes sync instantly to customer upload portal.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_11_profile_pricing.jpg" alt="Print Pricing Matrix" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Pricing</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Pricing Matrix</span>
+                <h4 class="gallery-title">Live Rate Configuration</h4>
+                <p class="gallery-desc">Dynamic B&W and Color rate settings synced immediately to customer web portals.</p>
+              </div>
+            </div>
+
+            <div class="gallery-card" onclick="openLightbox('assets/screenshots/vendor_10_profile_theme.jpg', 'Theme & Appearance Settings', 'Vendor selects between Light, Dark, or System mode to optimize contrast on tablet displays under varying kiosk lighting.')">
+              <div class="gallery-img-container mobile">
+                <img src="assets/screenshots/vendor_10_profile_theme.jpg" alt="Theme & Appearance Settings" loading="lazy">
+                <div class="gallery-hover-badge"><i data-lucide="zoom-in"></i> Inspect Theme</div>
+              </div>
+              <div class="gallery-meta">
+                <span class="gallery-tag">Appearance</span>
+                <h4 class="gallery-title">Theme &amp; Appearance</h4>
+                <p class="gallery-desc">Switch between High-Contrast Dark, Clean Light, and System adaptive UI.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. Distributed Architecture Flow & Verified Tech Stack
+         ========================================================================= -->
+    <section class="architecture-section" id="architecture">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="cpu"></i>
+            <span>Engineering Architecture</span>
+          </div>
+          <h2 class="section-title">Distributed Cloud &amp; Edge Sync</h2>
+          <p class="section-desc">
+            A hardened, multi-tenant system with strict tenant directory isolation, bidirectional WebSocket event dispatching, and Docker Compose deployment.
+          </p>
+        </div>
+
+        <!-- 4-Layer Architecture Topology Cards -->
+        <div class="arch-flow-diagram">
+          
+          <div class="arch-node">
+            <span class="arch-node-badge">1. Edge Clients</span>
+            <div class="arch-node-title">Customer Web &amp; Vendor App</div>
+            <div class="arch-node-tech">HTML5 • Vanilla JS • Flutter Android</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px;">
+              Zero-install mobile browser upload, canvas rendering, and Flutter tablet client with hardware spooling.
+            </p>
+          </div>
+
+          <div class="arch-node">
+            <span class="arch-node-badge">2. Edge Gateway</span>
+            <div class="arch-node-title">Reverse Proxy &amp; SSL</div>
+            <div class="arch-node-tech">jh0yc.aiccloud.online (Port 80/443)</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px;">
+              Terminates TLS, dispatches REST traffic, and proxies persistent WSS duplex event channels.
+            </p>
+          </div>
+
+          <div class="arch-node">
+            <span class="arch-node-badge">3. ASGI Core</span>
+            <div class="arch-node-title">FastAPI Backend (Python 3.12)</div>
+            <div class="arch-node-tech">pypdf • WebSocket Bus • UPI Engine</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px;">
+              Multi-file document ingress, async page inspection, NPCI intent generation, and UDP beacon (port 8002).
+            </p>
+          </div>
+
+          <div class="arch-node">
+            <span class="arch-node-badge">4. Storage &amp; Spool</span>
+            <div class="arch-node-title">Persistence &amp; Hardware</div>
+            <div class="arch-node-tech">/uploads/{id}/ • Printing.layoutPdf()</div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px;">
+              Strict tenant directory isolation, local transactional order state, and direct USB/Wi-Fi hardware spooling.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Distributed End-to-End Execution Flow (9-Step Lifecycle) -->
+        <div class="lifecycle-box">
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            <i data-lucide="git-commit" style="color: var(--brand-purple-light);"></i>
+            <span>End-to-End Distributed Request Lifecycle</span>
+          </h3>
+          <div class="lifecycle-steps">
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">1</span>
+              <span><strong>Scan &amp; Upload:</strong> Customer scans desk QR code and streams PDF to cloud gateway.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">2</span>
+              <span><strong>Edge Proxy:</strong> Cloud reverse proxy streams multipart payload to FastAPI ASGI core.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">3</span>
+              <span><strong>Compute Cost:</strong> Async <code class="code-tag">pypdf</code> inspects page counts and calculates B&amp;W/Color rates in &lt;20ms.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">4</span>
+              <span><strong>UPI Intent:</strong> Core formats NPCI URI (<code class="code-tag">upi://pay?...</code>) with vendor VPA and order token.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">5</span>
+              <span><strong>Dynamic QR:</strong> Portal displays dynamic QR code with one-tap deep-links for GPay/PhonePe/Paytm.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">6</span>
+              <span><strong>Claim Payment:</strong> Customer completes UPI transfer and submits 12-digit UTR confirmation claim.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">7</span>
+              <span><strong>WebSocket Push:</strong> Cloud backend relays real-time event (<code class="code-tag">&lt; 50ms</code>) to vendor Android tablet.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">8</span>
+              <span><strong>Audio Alert:</strong> Vendor client plays <code class="code-tag">new_job.mp3</code> chime and displays incoming job in Live Queue.</span>
+            </div>
+            <div class="lifecycle-step">
+              <span class="lifecycle-num">9</span>
+              <span><strong>1-Tap Spool:</strong> Vendor taps <strong>VERIFY &amp; PRINT</strong>; job dispatches to hardware and server auto-purges file.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-pills-row">
+          <div class="tech-pill"><i data-lucide="check"></i> FastAPI 0.115.6</div>
+          <div class="tech-pill"><i data-lucide="check"></i> Python 3.12 ASGI</div>
+          <div class="tech-pill"><i data-lucide="check"></i> Flutter 3.47 Native Client</div>
+          <div class="tech-pill"><i data-lucide="check"></i> WebSockets (Sub-50ms Duplex)</div>
+          <div class="tech-pill"><i data-lucide="check"></i> Docker Compose Containerized</div>
+          <div class="tech-pill"><i data-lucide="check"></i> pypdf Async Stream Analyzer</div>
+          <div class="tech-pill"><i data-lucide="check"></i> Direct NPCI UPI Protocols</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. Core API & WebSocket Reference Table
+         ========================================================================= -->
+    <section class="api-section" id="api">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="code-2"></i>
+            <span>Developer Reference</span>
+          </div>
+          <h2 class="section-title">Core API &amp; WebSocket Endpoints</h2>
+          <p class="section-desc">
+            Standardized REST endpoints and duplex WebSocket event buses powering the PrintPulse ecosystem. Click any endpoint to copy.
+          </p>
+        </div>
+
+        <div class="api-table-wrapper">
+          <table class="api-table" aria-label="PrintPulse Core API and WebSocket Reference">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 110px;">Method</th>
+                <th scope="col" style="width: 320px;">Endpoint</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="method-badge get">GET</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/shop/{vendor_id}', this)" title="Click to copy">/shop/{vendor_id}</code></td>
+                <td>Serves customer upload web portal configured for specific vendor pricing and VPA.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge post">POST</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/documents/batch-upload', this)" title="Click to copy">/api/documents/batch-upload</code></td>
+                <td>Multi-file multipart upload with async page count inspection and sheet calculation.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge post">POST</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/orders/create', this)" title="Click to copy">/api/orders/create</code></td>
+                <td>Generates order token, pricing summary, and NPCI UPI URI string.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge post">POST</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/orders/{id}/claim-payment', this)" title="Click to copy">/api/orders/{id}/claim-payment</code></td>
+                <td>Customer submits 12-digit UTR ref or one-tap payment claim.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge post">POST</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/orders/{id}/verify-payment', this)" title="Click to copy">/api/orders/{id}/verify-payment</code></td>
+                <td>Vendor or webhook marks order verified and dispatches to hardware queue.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge get">GET</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/vendor/{vendor_id}/stats', this)" title="Click to copy">/api/vendor/{vendor_id}/stats</code></td>
+                <td>Vendor dashboard session revenue, prints completed, and totals.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge get">GET</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/vendor/{vendor_id}/history', this)" title="Click to copy">/api/vendor/{vendor_id}/history</code></td>
+                <td>Retrieves completed and rejected order archive for vendor.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge delete">DELETE</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/api/vendor/{vendor_id}/history', this)" title="Click to copy">/api/vendor/{vendor_id}/history</code></td>
+                <td>Clears vendor order history from database with permanent wipe.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge ws">WSS</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/ws/vendor/{vendor_id}', this)" title="Click to copy">/ws/vendor/{vendor_id}</code></td>
+                <td>Real-time bi-directional order stream for vendor Android tablet.</td>
+              </tr>
+              <tr>
+                <td><span class="method-badge ws">WSS</span></td>
+                <td><code class="endpoint-code copyable" onclick="copyText('/ws/orders/{order_id}', this)" title="Click to copy">/ws/orders/{order_id}</code></td>
+                <td>Dedicated WebSocket channel for live checkout status updates.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="api-docs-link-box">
+          <a href="https://jh0yc.aiccloud.online/docs" target="_blank" rel="noopener noreferrer" class="btn-api-docs">
+            <i data-lucide="book-open"></i>
+            <span>Explore Interactive Swagger API Reference</span>
+            <i data-lucide="external-link"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. Interactive FAQ Section
+         ========================================================================= -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        
+        <div class="section-heading-group">
+          <div class="section-tag">
+            <i data-lucide="help-circle"></i>
+            <span>Frequently Asked Questions</span>
+          </div>
+          <h2 class="section-title">Got Questions? We Have Answers.</h2>
+          <p class="section-desc">
+            Everything you need to know about setting up PrintPulse in your print counter or commercial store.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Does the customer need to install any mobile app?</span>
+              <i data-lucide="chevron-down" class="faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              No. Customers simply scan the counter QR code with their default smartphone camera. The PrintPulse web portal opens instantly in mobile Safari or Chrome without any app downloads, logins, or permissions required.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How does zero-fee UPI payment work without a payment gateway?</span>
+              <i data-lucide="chevron-down" class="faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              PrintPulse utilizes the National Payments Corporation of India (NPCI) UPI deep-link standard. It dynamically formats a payment string directly to the vendor's Virtual Payment Address (VPA). The transaction settles 100% peer-to-peer directly into the vendor's bank account with 0% intermediary MDR deductions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How are customer documents protected from leaks or tampering?</span>
+              <i data-lucide="chevron-down" class="faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              Every vendor has strict filesystem tenant isolation (<code class="code-tag">/backend/uploads/{vendor_id}/</code>). Furthermore, customer uploads feature an optional Privacy Auto-Delete toggle that automatically shreds and deletes the uploaded file from server disk immediately after the vendor's physical hardware spooler receives it.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What physical printers are supported by the vendor Android app?</span>
+              <i data-lucide="chevron-down" class="faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              The Flutter vendor client integrates with Android's native Print Manager (<code class="code-tag">Printing.layoutPdf()</code>). Any physical printer with Wi-Fi, Ethernet, USB OTG, or Bluetooth connectivity supported by Android Print Services (HP, Canon, Epson, Brother, Ricoh, etc.) works seamlessly out of the box.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Can PrintPulse be self-hosted on a private local server?</span>
+              <i data-lucide="chevron-down" class="faq-chevron"></i>
+            </button>
+            <div class="faq-answer">
+              Yes. The backend includes a containerized <code class="code-tag">docker-compose.yml</code> setup mapping port 80:8000 with volume persistence, as well as a local network UDP discovery beacon on port 8002 for zero-configuration kiosk pairing on local store networks and Wi-Fi.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         12. Conversion Banner & Final Call to Action
+         ========================================================================= -->
+    <section class="cta-banner-section">
+      <div class="container">
+        
+        <div class="cta-banner-card">
+          <h2 class="cta-title">
+            Ready to Eliminate Printing Friction?
+          </h2>
+          <p class="cta-desc">
+            Deploy PrintPulse at your print counter or commercial shop today. Experience zero pen drives, instant UPI settlements, and sub-50ms order spooling.
+          </p>
+          <div class="cta-buttons">
+            <a href="https://jh0yc.aiccloud.online/shop/abhayv175" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+              <i data-lucide="sparkles"></i>
+              <span>Launch Live Customer Portal</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary">
+              <i data-lucide="github"></i>
+              <span>Star on GitHub</span>
+            </a>
+          </div>
+          <div class="cta-microcopy">
+            Zero customer app downloads • Direct 0% fee UPI settlements • Open Source Architecture
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       13. Interactive Lightbox Modal (<dialog>)
+       ========================================================================= -->
+  <dialog id="screenshot-lightbox" class="lightbox-dialog" aria-modal="true" aria-label="Screenshot Detail Lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <div class="lightbox-titles">
+          <span id="lightbox-badge" class="lightbox-tag">Production Screenshot</span>
+          <h3 id="lightbox-title" class="lightbox-title">Feature Preview</h3>
+          <p id="lightbox-desc" class="lightbox-desc">Detailed explanation of the production screen.</p>
+        </div>
+        <button type="button" class="lightbox-close-btn" aria-label="Close Lightbox" onclick="closeLightbox()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-img" src="" alt="Expanded Production Screenshot Preview">
+      </div>
+
+      <div class="lightbox-footer">
+        <div class="lightbox-footnote">
+          <i data-lucide="check-circle" style="width: 14px; height: 14px; color: var(--brand-emerald);"></i>
+          <span>Captured from live production cloud deployment: <code>jh0yc.aiccloud.online</code></span>
+        </div>
+        <button type="button" class="btn-lightbox-action" onclick="closeLightbox()">
+          <span>Done</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       14. Semantic Architect Footer
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="brand-icon" style="width: 26px; height: 26px;">
+              <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+            </div>
+            <span style="font-weight: 800; font-size: 1.05rem;">PrintPulse</span>
+          </div>
+          <p class="footer-copy">
+            Zero-Friction Modern Print-on-Demand Infrastructure.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#features" class="footer-link">Features</a>
+          <a href="#how-it-works" class="footer-link">Workflow</a>
+          <a href="#calculator" class="footer-link">Calculator</a>
+          <a href="#screenshots" class="footer-link">Showcase</a>
+          <a href="#architecture" class="footer-link">Architecture</a>
+          <a href="#api" class="footer-link">API Reference</a>
+          <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        </div>
+      </div>
+
+      <div class="footer-author-box">
+        <div>
+          Architected &amp; Engineered by <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="author-link">Abhay Verma</a>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.78rem;">
+          FastAPI • Flutter • WebSockets • Python 3.12 • Docker Compose • UPI Protocols
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
