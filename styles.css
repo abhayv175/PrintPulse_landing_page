@@ -3048,10 +3048,21 @@ body.lightbox-scroll-locked {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
-    transform: translate3d(0, var(--brand-morph-y, 18vh), 0) scale(var(--brand-morph-scale, 1.75)) !important;
+    transform: translate3d(0, var(--brand-morph-y, 135px), 0) scale(var(--brand-morph-scale, 1.75)) !important;
     transform-origin: center center !important;
-    will-change: transform, box-shadow !important;
-    transition: box-shadow 0.25s ease, opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+    will-change: transform !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    -webkit-transform-style: preserve-3d !important;
+    transform-style: preserve-3d !important;
+    /* Do NOT transition transform during scroll: it fights with requestAnimationFrame updates and causes jitter */
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s, box-shadow 0.25s ease !important;
+  }
+
+  /* Prevent mobile taps or touchscroll starts from disrupting the morph scale via desktop :hover/:active */
+  .nav-brand-link:hover,
+  .nav-brand-link:active {
+    transform: translate3d(0, var(--brand-morph-y, 135px), 0) scale(var(--brand-morph-scale, 1.75)) !important;
   }
 
   /* Completely hide PrintPulse logo, name and version when hamburger navbar is opened */
@@ -3060,7 +3071,8 @@ body.lightbox-scroll-locked {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transform: translate3d(0, var(--brand-morph-y, 18vh), 0) scale(0.7) !important;
+    transform: translate3d(0, var(--brand-morph-y, 135px), 0) scale(0.7) !important;
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
   }
 
   [data-theme="dark"] .nav-brand-link {

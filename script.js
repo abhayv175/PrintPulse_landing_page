@@ -883,6 +883,20 @@ function initMobileBrandMorph() {
   if (!brandLink) return;
 
   let ticking = false;
+  let targetPixelY = 135;
+  let scrollSettleTimer = null;
+
+  function calculateTargetY() {
+    if (window.innerWidth > 768) {
+      brandLink.style.removeProperty('--brand-morph-y');
+      brandLink.style.removeProperty('--brand-morph-scale');
+      brandLink.classList.remove('docked', 'hero-expanded');
+      return;
+    }
+    // Calculate fixed pixel distance based on screen height
+    // Bounded between 110px and 160px for consistent, clean positioning across all mobile device aspect ratios
+    targetPixelY = Math.min(160, Math.max(110, Math.round(window.innerHeight * 0.18)));
+  }
 
   function updateMorph() {
     if (window.innerWidth > 768) {
@@ -893,17 +907,18 @@ function initMobileBrandMorph() {
       return;
     }
 
-    const scrollY = window.scrollY || window.pageYOffset || 0;
-    // Complete the morph within the first 140px of scrolling
+    // Support both standard scrollY and iOS elastic bounce / overscroll (clamping to 0)
+    const rawScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+    const scrollY = Math.max(0, rawScrollY);
     const maxScroll = 140;
     const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
 
-    // When scrollY == 0: translate 18vh down, scale 1.75 (commands ~50% upper screen)
-    // When scrollY >= 140: translate 0vh, scale 1.0 (docked in top navbar)
-    const currentY = (1 - progress) * 18;
+    // Calculate position in exact pixels to prevent mobile dynamic vh recomputation jitter
+    const currentY = (1 - progress) * targetPixelY;
     const currentScale = 1 + (1 - progress) * 0.75;
 
-    brandLink.style.setProperty('--brand-morph-y', `${currentY.toFixed(2)}vh`);
+    // Fast subpixel assignment
+    brandLink.style.setProperty('--brand-morph-y', `${currentY.toFixed(1)}px`);
     brandLink.style.setProperty('--brand-morph-scale', currentScale.toFixed(3));
 
     if (progress >= 0.95) {
@@ -922,10 +937,31 @@ function initMobileBrandMorph() {
       window.requestAnimationFrame(updateMorph);
       ticking = true;
     }
+    // Ensure final state settles accurately on mobile momentum fling / iOS bounce
+    clearTimeout(scrollSettleTimer);
+    scrollSettleTimer = setTimeout(() => {
+      window.requestAnimationFrame(updateMorph);
+    }, 60);
   }
 
+  calculateTargetY();
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    calculateTargetY();
+    onScroll();
+  }, { passive: true });
+  window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+      calculateTargetY();
+      updateMorph();
+    }, 150);
+  }, { passive: true });
+
+  if ('onscrollend' in window) {
+    window.addEventListener('scrollend', () => {
+      window.requestAnimationFrame(updateMorph);
+    }, { passive: true });
+  }
 
   // Initial call
   updateMorph();
