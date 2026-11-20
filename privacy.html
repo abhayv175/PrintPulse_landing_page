@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#09090B">
+  <meta name="description" content="PrintPulse Privacy Policy. Disclosures on vendor Google OAuth, zero-retention ephemeral document processing, direct NPCI UPI payments, and security.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical & Social Metadata -->
+  <link rel="canonical" href="https://printpulse.netlify.app/privacy">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PrintPulse • Privacy Policy">
+  <meta property="og:description" content="Learn how PrintPulse handles Google OAuth, ephemeral document uploads, and direct peer-to-peer UPI payments with zero persistent document retention.">
+  <meta property="og:url" content="https://printpulse.netlify.app/privacy">
+  <meta property="og:image" content="/assets/screenshots/02_portal_active_order_desktop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PrintPulse • Privacy Policy">
+  <meta name="twitter:description" content="Learn how PrintPulse handles Google OAuth, ephemeral document uploads, and direct peer-to-peer UPI payments with zero persistent document retention.">
+  <meta name="twitter:image" content="/assets/screenshots/02_portal_active_order_desktop.png">
+
+  <title>Privacy Policy &bull; PrintPulse</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/favicon.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PrintPulse Privacy Policy",
+    "url": "https://printpulse.netlify.app/privacy",
+    "description": "Comprehensive disclosures on vendor Google OAuth data, zero-retention ephemeral customer document processing, and NPCI UPI settlements."
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              300: '#D8B4FE',
+              400: '#C4B5FD',
+              500: '#A78BFA',
+              600: '#7C3AED',
+              700: '#6D28D9',
+              800: '#5B21B6',
+              900: '#4C1D95',
+            },
+            dark: {
+              bg: '#09090B',
+              card: '#111116',
+              border: '#1F1F28',
+              hover: '#181822',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #09090B;
+      color: #F4F4F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Animated Purple Glow Orbs */
+    .ambient-glow-1 {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      top: -160px;
+      right: -120px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      bottom: -180px;
+      left: -140px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(109, 40, 217, 0.12) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Custom Glass Card Styling */
+    .policy-card {
+      background-color: #111116;
+      border: 1px solid #1F1F28;
+      border-radius: 20px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .policy-card:hover {
+      border-color: rgba(124, 58, 237, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.12);
+    }
+
+    /* Accent Pill */
+    .badge-accent {
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      color: #C4B5FD;
+    }
+
+    /* Anchor Offset for Smooth Nav */
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-[#7C3AED] selection:text-white relative">
+  <!-- Skip to Main Content for Accessibility -->
+  <a href="#main" class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-xl shadow-xl">Skip to Content</a>
+
+  <!-- Ambient Background Orbs -->
+  <div class="ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#09090B]/85 border-b border-[#1F1F28]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-18 flex items-center justify-between">
+      
+      <!-- Brand Logo & Home Backlink -->
+      <a href="/" class="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]" aria-label="PrintPulse Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] text-white flex items-center justify-center shadow-lg shadow-purple-600/25 group-hover:shadow-purple-600/40 transition-shadow">
+          <i data-lucide="printer" class="w-5 h-5 stroke-[2.2]"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-brand-300 transition-colors">PrintPulse</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full badge-accent font-bold uppercase tracking-wider">Legal</span>
+          </div>
+          <span class="text-[11px] text-zinc-400 font-medium hidden sm:inline">Autonomous Cloud-Print Platform</span>
+        </div>
+      </a>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="/terms" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">
+          <i data-lucide="file-check" class="w-3.5 h-3.5 text-brand-400"></i>
+          <span>Terms</span>
+        </a>
+        <a href="/" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white bg-[#111116] hover:bg-[#181822] border border-[#1F1F28] hover:border-brand-500/40 transition-all">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Back to Home</span>
+        </a>
+        <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="GitHub Repository">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Source</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main id="main" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
+
+    <!-- Hero Header -->
+    <section class="mb-10 sm:mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-accent text-xs font-mono font-semibold mb-4">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-400"></i>
+        <span>Official Privacy Disclosure</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Privacy Policy
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed">
+        PrintPulse is engineered on strict principles of data minimization, zero-retention ephemeral file processing, direct peer-to-peer UPI settlements, and complete transparency regarding Google OAuth vendor authentication.
+      </p>
+
+      <!-- Key Metadata Card -->
+      <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-[#111116] border border-[#1F1F28] flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="calendar" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Effective Date:</span>
+          <span class="font-mono font-bold text-white bg-white/5 px-2.5 py-1 rounded-lg border border-white/10">November 20, 2026</span>
+        </div>
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="globe" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Hosting Domain:</span>
+          <span class="font-mono text-brand-300">jh0yc.aiccloud.online</span>
+        </div>
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="user-check" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Developer:</span>
+          <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-300 underline font-semibold">Abhay Verma</a>
+        </div>
+      </div>
+
+      <!-- Policy Highlights Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
+        
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Auto-Purge</span>
+          <span class="text-sm font-semibold text-white">100% Ephemeral</span>
+          <p class="text-xs text-zinc-400">PDFs permanently deleted right after printing or expiry.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+            <i data-lucide="lock" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Google OAuth</span>
+          <span class="text-sm font-semibold text-white">Limited Use Only</span>
+          <p class="text-xs text-zinc-400">Basic profile info strictly for shop queue auth. Never sold.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+            <i data-lucide="credit-card" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Direct UPI</span>
+          <span class="text-sm font-semibold text-white">P2P Settlement</span>
+          <p class="text-xs text-zinc-400">Zero PINs, passwords, or cards stored. Only UTR recorded.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Android App</span>
+          <span class="text-sm font-semibold text-white">Token-Only Storage</span>
+          <p class="text-xs text-zinc-400">Only local session tokens stored in SharedPreferences.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Table of Contents / Fast Navigation -->
+    <nav class="mb-12 p-4 rounded-2xl bg-[#111116] border border-[#1F1F28]" aria-label="Table of Contents">
+      <div class="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-zinc-400">
+        <i data-lucide="list" class="w-4 h-4 text-brand-400"></i>
+        <span>Policy Contents</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+        <a href="#vendor-oauth" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">1.</span> Vendor Google OAuth Data
+        </a>
+        <a href="#customer-documents" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">2.</span> Customer Uploads & Deletion
+        </a>
+        <a href="#upi-payments" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">3.</span> NPCI UPI & Verification Data
+        </a>
+        <a href="#local-storage" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">4.</span> Android App Local Storage
+        </a>
+        <a href="#multi-tenancy" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">5.</span> Multi-Tenant Isolation
+        </a>
+        <a href="#security-measures" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">6.</span> Transport & Storage Security
+        </a>
+        <a href="#user-rights" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">7.</span> Data Rights & Erasure
+        </a>
+        <a href="#children" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">8.</span> Children's Privacy
+        </a>
+        <a href="#contact" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">9.</span> Developer Contact & Support
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sections Stack -->
+    <div class="flex flex-col gap-8 sm:gap-10">
+
+      <!-- Section 1: Vendor Google OAuth Data -->
+      <section id="vendor-oauth" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600/15 text-brand-400 flex items-center justify-center shrink-0 border border-brand-500/20">
+            <i data-lucide="key-round" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-brand-400 font-bold uppercase tracking-wider">Section 1</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Vendor Google OAuth Data Handling & Limited Use Disclosure
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse enables print shop owners and kiosk operators (&ldquo;Vendors&rdquo;) to authenticate their administrator accounts seamlessly via Google Sign-In. When a vendor signs in with Google, PrintPulse requests and receives only basic profile metadata provided through Google's standard OpenID Connect authorization flow:
+            </p>
+
+            <!-- Table of Requested Fields -->
+            <div class="overflow-x-auto my-4 rounded-xl border border-[#1F1F28] bg-black/30">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead class="bg-white/5 border-b border-[#1F1F28] text-zinc-300 font-mono">
+                  <tr>
+                    <th class="p-3 sm:p-3.5">Data Field</th>
+                    <th class="p-3 sm:p-3.5">OAuth Scope</th>
+                    <th class="p-3 sm:p-3.5">Specific Operational Purpose</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#1F1F28] text-zinc-300">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Full Name</td>
+                    <td class="p-3 font-mono text-xs text-zinc-400">profile</td>
+                    <td class="p-3">To address the print shop operator in the vendor dashboard and on printed receipts.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Email Address</td>
+                    <td class="p-3 font-mono text-xs text-zinc-400">email</td>
+                    <td class="p-3">To uniquely identify the vendor account and send critical administrative notifications.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Google User Identifier</td>
+                    <td class="p-3 font-mono text-xs text-zinc-400">openid / sub</td>
+                    <td class="p-3">To authenticate sessions and isolate multi-tenant shop queues (<code class="font-mono text-brand-300">/shop/{vendor_id}</code>).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Limited Use Compliance Box -->
+            <div class="p-4 sm:p-5 rounded-xl bg-purple-950/20 border border-brand-500/30 text-xs sm:text-sm text-zinc-300 space-y-2 mt-4">
+              <div class="flex items-center gap-2 font-bold text-brand-300">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+                <span>Google API Services User Data Policy Compliance:</span>
+              </div>
+              <p class="leading-relaxed">
+                PrintPulse's use and transfer of information received from Google APIs to any other app will adhere to the 
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline font-semibold">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.
+              </p>
+              <ul class="list-disc list-inside space-y-1 text-zinc-300 pt-1">
+                <li><strong class="text-white">Strict No-Sale Guarantee:</strong> PrintPulse <strong>never sells, rents, licenses, or trades</strong> Google user profile data to any third parties, brokers, or marketing networks.</li>
+                <li><strong class="text-white">No Advertising Use:</strong> PrintPulse does not transfer or use Google user data for serving advertisements, personalized retargeting, or behavioral surveillance.</li>
+                <li><strong class="text-white">No AI Model Training:</strong> Google user data is never used to train generalized artificial intelligence or machine learning models.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Customer Document Uploads & Auto-Deletion -->
+      <section id="customer-documents" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600/15 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+            <i data-lucide="file-text" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">Section 2</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Customer Document Uploads &amp; Automated Deletion
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse operates a touchless, browser-based customer web portal hosted at <code class="font-mono text-emerald-300">/shop/{vendor_id}</code>. Customers upload PDF documents and printable imagery directly from their mobile phones or laptops without creating an account or downloading an app.
+            </p>
+
+            <!-- File Lifecycle Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-4">
+              
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[11px]">1</span>
+                  <span>TLS 1.3 Ingestion</span>
+                </div>
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                  Documents are transmitted exclusively over encrypted HTTPS (<code class="font-mono">POST /api/documents/batch-upload</code>) directly into isolated per-vendor storage staging buffers.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[11px]">2</span>
+                  <span>Automated Analysis</span>
+                </div>
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                  The backend performs automated page counting, page-range extraction, and color-mode validation strictly to compute precise print pricing and generate hardware printer spool files.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-2">
+                <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-[11px]">3</span>
+                  <span>Immediate Deletion</span>
+                </div>
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                  Upon print job completion, order cancellation, or 24-hour expiration, the file is automatically and permanently purged from server disk storage (<code class="font-mono">os.unlink</code>).
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Zero Retention Guarantee Box -->
+            <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-xs sm:text-sm text-zinc-300 space-y-2 mt-4">
+              <div class="flex items-center gap-2 font-bold text-emerald-300">
+                <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                <span>Zero Long-Term Retention Policy:</span>
+              </div>
+              <p class="leading-relaxed">
+                PrintPulse does <strong>not</strong> retain archives, backups, or shadow copies of customer documents. Files are strictly treated as volatile, ephemeral print streams. Once marked as printed or cancelled, the underlying files are permanently wiped from the operating system's filesystem. Customer contents are never parsed for telemetry, content marketing, or advertising.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Payment & UPI Verification Data -->
+      <section id="upi-payments" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-600/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20">
+            <i data-lucide="wallet" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider">Section 3</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Payment &amp; NPCI UPI Verification Data
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse empowers print shops with direct, peer-to-peer (P2P) payments using India&rsquo;s <strong>National Payments Corporation of India (NPCI) Unified Payments Interface (UPI)</strong> standard:
+            </p>
+
+            <ul class="space-y-3 text-sm text-zinc-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Direct Peer-to-Peer Settlement:</strong> Customers transfer funds directly into the vendor&rsquo;s verified merchant UPI Virtual Payment Address (VPA). PrintPulse acts solely as a technical signaling bridge and never holds customer funds in escrow.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Transaction Reference Number (UTR) Storage Only:</strong> When a customer completes a UPI payment, they submit the 12-digit bank Unique Transaction Reference (UTR) number through the web portal. PrintPulse logs this UTR solely to associate the payment with the active print order.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Zero Collection of Financial Credentials:</strong> PrintPulse <strong>never collects, requests, processes, or stores</strong> bank account passwords, debit/credit card numbers, CVVs, or UPI PINs. All credential entry occurs exclusively within the customer&rsquo;s trusted UPI client (such as Google Pay, PhonePe, Paytm, or BHIM).</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Local Device Storage -->
+      <section id="local-storage" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600/15 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Section 4</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              PrintPulse Android Vendor App &amp; Local Device Storage
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              Print shop vendors utilize the <strong>PrintPulse Android App</strong> to monitor the incoming print queue and control printer spooling. The application utilizes local device storage strictly within standard operating system sandboxes:
+            </p>
+
+            <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] space-y-2 text-xs sm:text-sm text-zinc-300">
+              <div class="flex items-center gap-2 font-mono font-bold text-amber-400">
+                <i data-lucide="database" class="w-4 h-4"></i>
+                <span>Android SharedPreferences Scope:</span>
+              </div>
+              <p>
+                The application stores only lightweight session tokens and configuration preferences locally:
+              </p>
+              <ul class="list-disc list-inside space-y-1 text-zinc-300">
+                <li><strong class="text-white">Authentication JWT / Session Token:</strong> Preserved locally to maintain encrypted WebSocket channels (<code class="font-mono text-brand-300">/ws/vendor/{vendor_id}</code>) without requiring re-authentication upon app relaunch.</li>
+                <li><strong class="text-white">Kiosk Profile Preferences:</strong> Local pricing rules (Black &amp; White vs Color rates) and active theme settings.</li>
+              </ul>
+              <p class="pt-1 text-zinc-400">
+                No customer PDFs, personally identifiable customer records, or financial information are ever permanently persisted on the vendor&rsquo;s Android device.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Multi-Tenant Architecture & Data Isolation -->
+      <section id="multi-tenancy" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600/15 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-indigo-400 font-bold uppercase tracking-wider">Section 5</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Multi-Tenant Architecture &amp; Shop Isolation
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              PrintPulse serves multiple independent print shops across colleges, universities, and commercial printing centers through a strictly isolated multi-tenant design:
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0"></i>
+                <span><strong>Isolated Shop Queues:</strong> Every print job is bound strictly to a validated <code class="font-mono text-brand-300">vendor_id</code>. Shop A cannot inspect, intercept, or modify jobs submitted to Shop B.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0"></i>
+                <span><strong>Filesystem Directory Sandboxing:</strong> Staged files are isolated into shop-specific directories (<code class="font-mono">uploads/{vendor_id}/{order_id}/</code>) preventing directory traversal or cross-tenant leaks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0"></i>
+                <span><strong>WebSocket Realm Partitioning:</strong> Live printer notifications and customer payment updates broadcast strictly within isolated per-vendor and per-order channels.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Security Measures -->
+      <section id="security-measures" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-600/15 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/20">
+            <i data-lucide="shield" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-teal-400 font-bold uppercase tracking-wider">Section 6</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Transport Security &amp; Infrastructure Safeguards
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              PrintPulse enforces rigorous technical and operational controls to protect data in transit and at rest:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+              <div class="p-3.5 rounded-xl bg-black/40 border border-[#1F1F28]">
+                <span class="font-bold text-white flex items-center gap-1.5 mb-1">
+                  <i data-lucide="lock" class="w-3.5 h-3.5 text-teal-400"></i>
+                  Strict HTTPS / TLS 1.3
+                </span>
+                <p class="text-zinc-400 text-xs">All API traffic, file uploads, and web socket handshakes are encrypted end-to-end.</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-black/40 border border-[#1F1F28]">
+                <span class="font-bold text-white flex items-center gap-1.5 mb-1">
+                  <i data-lucide="wifi" class="w-3.5 h-3.5 text-teal-400"></i>
+                  Local UDP Discovery
+                </span>
+                <p class="text-zinc-400 text-xs">Kiosk auto-discovery packets run strictly on local private subnets and never broadcast externally.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: User Rights & Data Erasure -->
+      <section id="user-rights" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-rose-600/15 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/20">
+            <i data-lucide="user-x" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-rose-400 font-bold uppercase tracking-wider">Section 7</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              User Rights, Data Erasure &amp; Control
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              We uphold transparent user control over stored information:
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white">Vendor History Purge:</strong> Vendors can trigger an immediate deletion of their historical print orders via the in-app &ldquo;Clear Order History&rdquo; option or via <code class="font-mono text-brand-300">DELETE /api/vendor/{vendor_id}/history</code>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white">Customer Data Rights:</strong> Because customer documents are purged immediately upon print completion, no persistent personal archives exist. Customers may request status inquiries at any time.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white">Account Deletion:</strong> Vendors can revoke Google OAuth access at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" class="text-brand-300 underline font-semibold">Google Account Permissions</a>.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Children's Privacy -->
+      <section id="children" class="policy-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-zinc-700/20 text-zinc-300 flex items-center justify-center shrink-0 border border-zinc-700/30">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-zinc-400 font-bold uppercase tracking-wider">Section 8</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
+              Children&rsquo;s Privacy
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              PrintPulse does not knowingly collect personally identifiable information from children under the age of 13 (or under 16 in applicable jurisdictions). If we become aware that personal information of a child has been collected without parental consent, we take immediate action to delete that information permanently.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 9: Developer Contact & Governance -->
+      <section id="contact" class="policy-card p-6 sm:p-8 border-brand-500/30 bg-gradient-to-b from-[#111116] to-[#151124]">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-300 flex items-center justify-center shrink-0 border border-brand-500/30">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-brand-400 font-bold uppercase tracking-wider">Section 9</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
+              Developer, Operator &amp; Contact Information
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse is developed, maintained, and operated as an open-source autonomous print-kiosk system by <strong>Abhay Verma</strong>. For privacy inquiries, data deletion requests, or Google OAuth verification questions, please contact the developer directly:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+              
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Lead Developer &amp; Maintainer</span>
+                <span class="text-white font-bold text-base">Abhay Verma</span>
+                <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-brand-300 hover:underline flex items-center gap-1 font-semibold mt-1">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>abhayv175.netlify.app</span>
+                </a>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Direct Contact Email</span>
+                <a href="mailto:abhayv175@gmail.com" class="text-white hover:text-brand-300 font-mono font-bold text-base transition-colors">
+                  abhayv175@gmail.com
+                </a>
+                <span class="text-zinc-400 text-xs mt-1">Inquiries answered within 48 business hours.</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1 sm:col-span-2">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Open Source Repository &amp; Issues</span>
+                <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="text-brand-300 hover:underline flex items-center gap-1.5 font-mono text-xs sm:text-sm font-semibold">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>https://github.com/abhayv175/PrintPulse</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="mt-12 text-center">
+      <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111116] hover:bg-[#181822] border border-[#1F1F28] hover:border-brand-500/40 text-xs sm:text-sm text-zinc-300 hover:text-white transition-all font-semibold">
+        <i data-lucide="arrow-up" class="w-4 h-4 text-brand-400"></i>
+        <span>Back to Top</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full border-t border-[#1F1F28] bg-[#09090B]/90 mt-16 py-8 relative z-10 text-xs text-zinc-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] text-white flex items-center justify-center">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        </div>
+        <span class="font-bold text-zinc-300">PrintPulse</span>
+        <span>&bull; &copy; 2026 Abhay Verma. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/" class="text-zinc-400 hover:text-white transition-colors">Home</a>
+        <a href="/privacy" class="text-brand-400 font-semibold underline">Privacy Policy</a>
+        <a href="/terms" class="text-zinc-400 hover:text-white transition-colors">Terms of Service</a>
+        <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+        <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">Developer</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Vector Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090B">
+  <meta name="description" content="The spooling path you requested does not exist. Return to the PrintPulse autonomous cloud-print platform homepage.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://printpulse.netlify.app/404">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="404 — Page Not Found • PrintPulse">
+  <meta property="og:description" content="The requested page does not exist. Return to PrintPulse.">
+  <meta property="og:url" content="https://printpulse.netlify.app/404">
+  <meta property="og:image" content="/assets/screenshots/02_portal_active_order_desktop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>404 — Page Not Found &bull; PrintPulse</title>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "404 Page Not Found • PrintPulse",
+    "url": "https://printpulse.netlify.app/404",
+    "description": "The spooling path you requested does not exist on PrintPulse."
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/brand/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #09090B;
+      color: #E4E4E7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .ambient-glow {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="relative flex flex-col justify-between selection:bg-purple-600 selection:text-white">
+  <a href="#main" class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-xl shadow-xl">Skip to Content</a>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="w-full border-b border-[#1F1F28] py-4 px-6 relative z-10 backdrop-blur-md bg-[#09090B]/80">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group" aria-label="PrintPulse Home">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] text-white flex items-center justify-center shadow-lg shadow-purple-600/30">
+          <i data-lucide="printer" class="w-5 h-5"></i>
+        </div>
+        <span class="text-lg font-extrabold text-white">PrintPulse</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="/privacy" class="text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors">Privacy</a>
+        <a href="/terms" class="text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-colors">Terms</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 404 Hero -->
+  <main id="main" class="flex-1 flex items-center justify-center px-4 py-16 relative z-10">
+    <div class="max-w-md w-full text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-purple-950/40 border border-purple-500/30 text-purple-400 mb-6 shadow-xl shadow-purple-900/20">
+        <i data-lucide="file-question" class="w-10 h-10"></i>
+      </div>
+
+      <div class="font-mono text-sm uppercase tracking-widest text-purple-400 font-bold mb-2">404 Error</div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Page Not Found</h1>
+      <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-8">
+        The spooling path you requested does not exist or has been relocated. Return home to browse our autonomous cloud-print platform.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-sm shadow-lg shadow-purple-600/30 transition-all hover:scale-[1.02]">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Return to Home</span>
+        </a>
+        <a href="/privacy" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#111116] hover:bg-[#181822] text-zinc-300 hover:text-white font-semibold text-sm border border-[#1F1F28] transition-all">
+          <i data-lucide="shield" class="w-4 h-4 text-purple-400"></i>
+          <span>Privacy Policy</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-[#1F1F28] py-6 px-6 text-center text-xs text-zinc-500 relative z-10">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>PrintPulse &bull; Zero-Friction Modern Print-on-Demand Infrastructure</div>
+      <div class="flex items-center gap-4">
+        <a href="/" class="hover:text-zinc-300 transition-colors">Home</a>
+        <a href="/privacy" class="hover:text-zinc-300 transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-zinc-300 transition-colors">Terms</a>
+        <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-300 transition-colors">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

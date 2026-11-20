@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#09090B">
+  <meta name="description" content="PrintPulse Terms of Service. Operational terms covering autonomous cloud print spooling, direct vendor UPI settlements, and acceptable use policies.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical & Social Metadata -->
+  <link rel="canonical" href="https://printpulse.netlify.app/terms">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PrintPulse • Terms of Service">
+  <meta property="og:description" content="Operational terms and conditions for PrintPulse autonomous cloud-print platform, direct vendor UPI settlements, and acceptable use.">
+  <meta property="og:url" content="https://printpulse.netlify.app/terms">
+  <meta property="og:image" content="/assets/screenshots/02_portal_active_order_desktop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PrintPulse • Terms of Service">
+  <meta name="twitter:description" content="Operational terms and conditions for PrintPulse autonomous cloud-print platform, direct vendor UPI settlements, and acceptable use.">
+  <meta name="twitter:image" content="/assets/screenshots/02_portal_active_order_desktop.png">
+
+  <title>Terms of Service &bull; PrintPulse</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/assets/brand/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/favicon.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PrintPulse Terms of Service",
+    "url": "https://printpulse.netlify.app/terms",
+    "description": "Operational terms and conditions for PrintPulse autonomous cloud-print platform, direct vendor UPI settlements, and acceptable use."
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FAF5FF',
+              100: '#F3E8FF',
+              200: '#E9D5FF',
+              300: '#D8B4FE',
+              400: '#C4B5FD',
+              500: '#A78BFA',
+              600: '#7C3AED',
+              700: '#6D28D9',
+              800: '#5B21B6',
+              900: '#4C1D95',
+            },
+            dark: {
+              bg: '#09090B',
+              card: '#111116',
+              border: '#1F1F28',
+              hover: '#181822',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #09090B;
+      color: #F4F4F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Animated Purple Glow Orbs */
+    .ambient-glow-1 {
+      position: fixed;
+      width: 520px;
+      height: 520px;
+      top: -160px;
+      right: -120px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      bottom: -180px;
+      left: -140px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(109, 40, 217, 0.12) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Custom Glass Card Styling */
+    .terms-card {
+      background-color: #111116;
+      border: 1px solid #1F1F28;
+      border-radius: 20px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .terms-card:hover {
+      border-color: rgba(124, 58, 237, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.12);
+    }
+
+    /* Accent Pill */
+    .badge-accent {
+      background: rgba(124, 58, 237, 0.12);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      color: #C4B5FD;
+    }
+
+    /* Anchor Offset for Smooth Nav */
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-[#7C3AED] selection:text-white relative">
+  <!-- Skip to Main Content for Accessibility -->
+  <a href="#main" class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-xl shadow-xl">Skip to Content</a>
+
+  <!-- Ambient Background Orbs -->
+  <div class="ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#09090B]/85 border-b border-[#1F1F28]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-18 flex items-center justify-between">
+      
+      <!-- Brand Logo & Home Backlink -->
+      <a href="/" class="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]" aria-label="PrintPulse Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] text-white flex items-center justify-center shadow-lg shadow-purple-600/25 group-hover:shadow-purple-600/40 transition-shadow">
+          <i data-lucide="printer" class="w-5 h-5 stroke-[2.2]"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-brand-300 transition-colors">PrintPulse</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full badge-accent font-bold uppercase tracking-wider">Terms</span>
+          </div>
+          <span class="text-[11px] text-zinc-400 font-medium hidden sm:inline">Autonomous Cloud-Print Platform</span>
+        </div>
+      </a>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="/privacy" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-400"></i>
+          <span>Privacy</span>
+        </a>
+        <a href="/" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white bg-[#111116] hover:bg-[#181822] border border-[#1F1F28] hover:border-brand-500/40 transition-all">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Back to Home</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main id="main" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
+
+    <!-- Hero Header -->
+    <section class="mb-10 sm:mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-accent text-xs font-mono font-semibold mb-4">
+        <i data-lucide="file-check" class="w-3.5 h-3.5 text-brand-400"></i>
+        <span>Legal Terms &amp; Conditions</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+        Terms of Service
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed">
+        These Terms of Service govern your access to and use of PrintPulse, including our customer print portal, vendor Android kiosk app, and associated cloud relay infrastructure. Please review these operational conditions carefully.
+      </p>
+
+      <!-- Key Metadata Card -->
+      <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-[#111116] border border-[#1F1F28] flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="calendar" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Effective Date:</span>
+          <span class="font-mono font-bold text-white bg-white/5 px-2.5 py-1 rounded-lg border border-white/10">November 20, 2026</span>
+        </div>
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="globe" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Service Endpoint:</span>
+          <span class="font-mono text-brand-300">jh0yc.aiccloud.online</span>
+        </div>
+        <div class="flex items-center gap-2 text-zinc-300 font-medium">
+          <i data-lucide="user-check" class="w-4 h-4 text-brand-400 shrink-0"></i>
+          <span>Maintainer:</span>
+          <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-300 underline font-semibold">Abhay Verma</a>
+        </div>
+      </div>
+
+      <!-- Quick Summary Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-6">
+        
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Role</span>
+          <span class="text-sm font-semibold text-white">Document Relay</span>
+          <p class="text-xs text-zinc-400">PrintPulse routes print jobs and page counts; we are not a print vendor.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Payments</span>
+          <span class="text-sm font-semibold text-white">Direct P2P UPI</span>
+          <p class="text-xs text-zinc-400">Zero commissions. Funds transfer directly between customer and vendor.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="file-check-2" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Ownership</span>
+          <span class="text-sm font-semibold text-white">100% User Owned</span>
+          <p class="text-xs text-zinc-400">You retain all intellectual property in your submitted documents.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#111116]/80 border border-[#1F1F28] flex flex-col gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+            <i data-lucide="clock-alert" class="w-4 h-4"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-zinc-400 font-bold">Retention</span>
+          <span class="text-sm font-semibold text-white">Ephemeral Storage</span>
+          <p class="text-xs text-zinc-400">All uploaded files auto-purge immediately post-print or upon expiry.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Table of Contents / Quick Jump -->
+    <nav class="mb-12 p-4 rounded-2xl bg-[#111116] border border-[#1F1F28]" aria-label="Table of Contents">
+      <div class="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-zinc-400">
+        <i data-lucide="list" class="w-4 h-4 text-brand-400"></i>
+        <span>Table of Terms</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+        <a href="#acceptance" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">1.</span> Acceptance of Terms
+        </a>
+        <a href="#platform-role" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">2.</span> Platform Role &amp; Direct UPI
+        </a>
+        <a href="#vendor-responsibilities" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">3.</span> Vendor Responsibilities
+        </a>
+        <a href="#acceptable-use" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">4.</span> Acceptable Use &amp; Content
+        </a>
+        <a href="#file-deletion" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">5.</span> Automated File Purging
+        </a>
+        <a href="#disclaimer" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">6.</span> "As Is" Warranty Disclaimer
+        </a>
+        <a href="#liability" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">7.</span> Limitation of Liability
+        </a>
+        <a href="#modifications" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">8.</span> Modifications to Terms
+        </a>
+        <a href="#contact" class="text-zinc-400 hover:text-brand-300 hover:underline flex items-center gap-1.5 py-1">
+          <span class="font-mono text-brand-400">9.</span> Operator &amp; Contact
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sections Stack -->
+    <div class="flex flex-col gap-8 sm:gap-10">
+
+      <!-- Section 1: Acceptance of Terms -->
+      <section id="acceptance" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600/15 text-brand-400 flex items-center justify-center shrink-0 border border-brand-500/20">
+            <i data-lucide="check-circle" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-brand-400 font-bold uppercase tracking-wider">Section 1</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Acceptance of Terms
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              By accessing, browsing, or utilizing the PrintPulse customer web portal (<code class="font-mono text-brand-300">/shop/{vendor_id}</code>), downloading or executing the PrintPulse Android Vendor App, or communicating through our application programming interfaces (APIs) and WebSockets, you explicitly acknowledge that you have read, understood, and agreed to be legally bound by these Terms of Service and our companion 
+              <a href="/privacy" class="text-brand-300 underline font-semibold hover:text-brand-200">Privacy Policy</a>.
+            </p>
+            <p class="text-sm sm:text-base text-zinc-400 leading-relaxed">
+              If you do not agree to all terms and conditions stated herein, you must immediately terminate access to and refrain from using any part of the PrintPulse ecosystem.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Platform Role & Direct UPI Settlement -->
+      <section id="platform-role" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-600/15 text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20">
+            <i data-lucide="shuffle" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider">Section 2</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Platform Role &amp; Direct Peer-to-Peer UPI Settlement
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse serves exclusively as a decentralized technical relay architecture designed to streamline document transfer and printing between customers and independent print shop kiosks:
+            </p>
+
+            <div class="space-y-3 text-sm text-zinc-300">
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-white font-bold">
+                  <i data-lucide="cpu" class="w-4 h-4 text-blue-400"></i>
+                  <span>Technical Signaling &amp; Spooling Relay:</span>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  PrintPulse performs client-side inspection, server-side PDF page counting, print parameter extraction (copies, page ranges, color vs. black-and-white mode), and real-time WebSocket order dispatch to the vendor's physical terminal. PrintPulse is not a print vendor, publisher, or physical printing service provider.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-white font-bold">
+                  <i data-lucide="arrow-left-right" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Direct Peer-to-Peer NPCI UPI Settlements:</span>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  All monetary transactions for printing services occur directly between the customer and the print shop vendor via the <strong>National Payments Corporation of India (NPCI) Unified Payments Interface (UPI)</strong>. The customer pays directly to the vendor's registered merchant VPA or QR code.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-white font-bold">
+                  <i data-lucide="shield-x" class="w-4 h-4 text-rose-400"></i>
+                  <span>Non-Banking &amp; Zero Escrow Status:</span>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  PrintPulse is <strong>not a payment aggregator, bank, financial institution, or escrow agent</strong>. PrintPulse does not hold, handle, touch, or process customer funds, does not levy transaction fees or percentage commissions on print charges, and does not store banking credentials or UPI PINs.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Vendor Responsibilities & Google OAuth Account -->
+      <section id="vendor-responsibilities" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-purple-600/15 text-brand-400 flex items-center justify-center shrink-0 border border-brand-500/20">
+            <i data-lucide="store" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-brand-400 font-bold uppercase tracking-wider">Section 3</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Print Shop Vendor Responsibilities &amp; Authentication
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              Vendors operating print shops through the PrintPulse Android App or administrative endpoints agree to uphold the following standards:
+            </p>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-zinc-300">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Google OAuth Authentication:</strong> Vendors authenticate via Google Sign-In. Vendors are solely responsible for maintaining the confidentiality of their Google account and local session tokens, and for all activities conducted under their vendor identifier (<code class="font-mono text-brand-300">vendor_id</code>).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Transparent &amp; Accurate Pricing:</strong> Vendors must configure honest, accurate per-page rates for Black &amp; White and Color printing in their shop settings. Rates configured are binding for orders placed through that shop portal.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Payment &amp; UTR Verification:</strong> Vendors are required to verify that the customer-submitted Unique Transaction Reference (UTR) matches an actual credit in their UPI merchant account before releasing or fulfilling physical print outputs.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-1 shrink-0"></i>
+                <span><strong class="text-white">Order Fulfillment &amp; Hardware Maintenance:</strong> Vendors are solely responsible for physical paper supply, toner levels, hardware operation, and fulfilling confirmed print jobs in an expeditious and professional manner.</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Acceptable Use & Content Ownership -->
+      <section id="acceptable-use" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600/15 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-emerald-400 font-bold uppercase tracking-wider">Section 4</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Acceptable Use &amp; Customer Content Ownership
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              We respect user content ownership while maintaining strict security rules for file processing:
+            </p>
+
+            <div class="p-4 sm:p-5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-xs sm:text-sm text-zinc-300 space-y-2 mb-4">
+              <div class="flex items-center gap-2 font-bold text-emerald-300">
+                <i data-lucide="file-check" class="w-4 h-4"></i>
+                <span>Full User Intellectual Property Retention:</span>
+              </div>
+              <p class="leading-relaxed">
+                Customers retain full copyright, intellectual property, and ownership rights in all documents, PDFs, images, and files uploaded to PrintPulse. Uploading files grants PrintPulse only a temporary, strictly limited license to render page previews, count pages, and spool the stream to the designated vendor printer.
+              </p>
+            </div>
+
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono mb-2">Prohibited Activities &amp; Content:</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong>Unauthorized Copyrighted Materials:</strong> Uploading or reproducing documents, textbooks, commercial publications, or trade secrets without verified authorization from the copyright holder.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong>Unlawful or Harmful Content:</strong> Submitting material that is defamatory, obscene, harassing, promoting hate speech, or violating applicable Indian laws, including the Information Technology Act, 2000.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong>Malicious Code &amp; Exploits:</strong> Transmitting corrupted files, polyglot PDFs, exploit payloads, or malicious scripts intended to compromise the backend or print spoolers.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-400 mt-0.5 shrink-0"></i>
+                <span><strong>Payment Fraud &amp; UTR Spoofing:</strong> Submitting falsified, reused, or forged UPI transaction references to obtain free printing services without transferring funds to the vendor.</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Automated File Deletion & Ephemeral Storage -->
+      <section id="file-deletion" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600/15 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20">
+            <i data-lucide="trash-2" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">Section 5</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Automated File Deletion &amp; Ephemeral Architecture
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              PrintPulse operates an ephemeral-by-design pipeline. When documents are uploaded for printing:
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-400 mt-0.5 shrink-0"></i>
+                <span><strong>Immediate Post-Print Purge:</strong> Uploaded files are automatically unlinked and permanently deleted from disk storage immediately following successful print job completion, order rejection, or cancellation.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-400 mt-0.5 shrink-0"></i>
+                <span><strong>Automatic Expiration:</strong> Staged files not acted upon within 24 hours are automatically purged to prevent disk clutter and protect customer privacy.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-400 mt-0.5 shrink-0"></i>
+                <span><strong>No Archival Warranty:</strong> PrintPulse does not provide long-term cloud storage or backup services. Customers are solely responsible for maintaining backup copies of their original documents.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: "As Is" Disclaimer -->
+      <section id="disclaimer" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-zinc-700/20 text-zinc-300 flex items-center justify-center shrink-0 border border-zinc-700/30">
+            <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-zinc-400 font-bold uppercase tracking-wider">Section 6</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Disclaimer of Warranties (&ldquo;As Is&rdquo;)
+            </h2>
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed uppercase tracking-wide bg-black/40 p-4 rounded-xl border border-[#1F1F28]">
+              PRINTPULSE AND ALL ASSOCIATED SERVICES, SOFTWARE, WEB PORTALS, AND APIS ARE PROVIDED STRICTLY ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. TO THE FULLEST EXTENT PERMISSIBLE BY APPLICABLE LAW, THE MAINTAINER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+            </p>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mt-3">
+              We do not warrant that PrintPulse will be uninterrupted, error-free, timely, or completely immune to printer hardware malfunctions, paper jams, local power outages, network outages, or third-party UPI gateway downtime.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Limitation of Liability -->
+      <section id="liability" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-rose-600/15 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/20">
+            <i data-lucide="scale" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-rose-400 font-bold uppercase tracking-wider">Section 7</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Limitation of Liability
+            </h2>
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+              To the maximum extent permitted by applicable law, in no event shall PrintPulse, its creator, or its contributors be liable for any indirect, incidental, special, exemplary, consequential, or punitive damages (including but not limited to loss of data, loss of business profits, academic penalties, hardware damage, or financial disputes between vendors and customers) arising out of or related to your use of or inability to use PrintPulse.
+            </p>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Any dispute regarding print quality, misprinted sheets, paper dimensions, or UPI payment transfers must be resolved directly between the customer and the respective print shop vendor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Modifications to Terms -->
+      <section id="modifications" class="terms-card p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-600/15 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20">
+            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-indigo-400 font-bold uppercase tracking-wider">Section 8</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+              Modifications to Terms &amp; Governing Law
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-3">
+              We reserve the right to revise or amend these Terms of Service at any time. When modifications occur, the &ldquo;Effective Date&rdquo; at the top of this document will be updated accordingly. Continued use of PrintPulse following the posting of changes constitutes full acceptance of the updated terms.
+            </p>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              These terms are governed by and construed in accordance with the laws of India. Any legal dispute or controversy arising under these terms shall be subject to the exclusive jurisdiction of the competent courts in India.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 9: Operator & Contact Information -->
+      <section id="contact" class="terms-card p-6 sm:p-8 border-brand-500/30 bg-gradient-to-b from-[#111116] to-[#151124]">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600/20 text-brand-300 flex items-center justify-center shrink-0 border border-brand-500/30">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-mono text-xs text-brand-400 font-bold uppercase tracking-wider">Section 9</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
+              Operator, Maintainer &amp; Contact Information
+            </h2>
+            <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+              PrintPulse is an open-source autonomous print-kiosk system created and maintained by <strong>Abhay Verma</strong>. For questions regarding these Terms of Service or operational procedures, please reach out via the following channels:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+              
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Maintainer &amp; Developer</span>
+                <span class="text-white font-bold text-base">Abhay Verma</span>
+                <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-brand-300 hover:underline flex items-center gap-1 font-semibold mt-1">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>abhayv175.netlify.app</span>
+                </a>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Contact Email</span>
+                <a href="mailto:abhayv175@gmail.com" class="text-white hover:text-brand-300 font-mono font-bold text-base transition-colors">
+                  abhayv175@gmail.com
+                </a>
+                <span class="text-zinc-400 text-xs mt-1">Inquiries answered within 48 business hours.</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-black/40 border border-[#1F1F28] flex flex-col gap-1 sm:col-span-2">
+                <span class="text-zinc-400 font-mono text-xs uppercase font-bold">Open Source Project &amp; Bug Reports</span>
+                <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="text-brand-300 hover:underline flex items-center gap-1.5 font-mono text-xs sm:text-sm font-semibold">
+                  <i data-lucide="github" class="w-4 h-4"></i>
+                  <span>https://github.com/abhayv175/PrintPulse</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="mt-12 text-center">
+      <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111116] hover:bg-[#181822] border border-[#1F1F28] hover:border-brand-500/40 text-xs sm:text-sm text-zinc-300 hover:text-white transition-all font-semibold">
+        <i data-lucide="arrow-up" class="w-4 h-4 text-brand-400"></i>
+        <span>Back to Top</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full border-t border-[#1F1F28] bg-[#09090B]/90 mt-16 py-8 relative z-10 text-xs text-zinc-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] text-white flex items-center justify-center">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        </div>
+        <span class="font-bold text-zinc-300">PrintPulse</span>
+        <span>&bull; &copy; 2026 Abhay Verma. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/" class="text-zinc-400 hover:text-white transition-colors">Home</a>
+        <a href="/privacy" class="text-zinc-400 hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms" class="text-brand-400 font-semibold underline">Terms of Service</a>
+        <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+        <a href="https://abhayv175.netlify.app" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">Developer</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Vector Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

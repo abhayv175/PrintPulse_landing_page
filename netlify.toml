@@ -1,0 +1,65 @@
+# Netlify Production Configuration for PrintPulse Landing Page
+
+[build]
+  publish = "."
+
+# Clean URL Routing for Legal Pages
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+# Standard Favicon Redirects
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/assets/brand/favicon.png"
+  status = 200
+
+[[redirects]]
+  from = "/favicon.svg"
+  to = "/assets/brand/favicon.svg"
+  status = 200
+
+# Custom 404 Error Page Fallback
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Global Security & Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# HTML Cache Invalidation (Instant updates on deployment)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Long-term Asset Caching (CSS, JS, Fonts, Images)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

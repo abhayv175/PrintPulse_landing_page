@@ -6,13 +6,37 @@
   <title>PrintPulse — Zero-Friction Modern Print-on-Demand Infrastructure</title>
   
   <!-- SEO & OpenGraph Meta -->
-  <meta name="description" content="Next-generation cloud-synchronized print ecosystem eliminating pen drives, cables, and kiosk queues. Instant web uploads, zero-fee direct UPI, and sub-50ms push spooling to vendor Android terminals.">
+  <meta name="description" content="Next-generation cloud-synchronized print ecosystem eliminating pen drives and queues. Instant web uploads, 0% fee UPI, and sub-50ms push spooling to Android.">
   <meta name="author" content="Abhay Verma">
+  <link rel="canonical" href="https://printpulse.netlify.app/">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="PrintPulse — Zero-Friction Modern Print-on-Demand Infrastructure">
   <meta property="og:description" content="Instant web uploads, zero-install customer portal, direct zero-fee UPI settlement, and sub-50ms push spooling to Android tablets.">
   <meta property="og:image" content="assets/screenshots/02_portal_active_order_desktop.png">
-  <meta property="og:url" content="https://jh0yc.aiccloud.online">
+  <meta property="og:url" content="https://printpulse.netlify.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PrintPulse — Zero-Friction Modern Print-on-Demand Infrastructure">
+  <meta name="twitter:description" content="Instant web uploads, zero-install customer portal, direct zero-fee UPI settlement, and sub-50ms push spooling to Android tablets.">
+  <meta name="twitter:image" content="assets/screenshots/02_portal_active_order_desktop.png">
   <meta name="theme-color" content="#09090b">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PrintPulse",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Android, Web, Linux",
+    "description": "Zero-Friction Modern Print-on-Demand Infrastructure eliminating pen drives, cables, and kiosk queues.",
+    "url": "https://printpulse.netlify.app/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
@@ -44,6 +68,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Accessible Skip Link -->
+  <a href="#main" class="skip-link">Skip to Content</a>
 
   <!-- Dynamic Scroll Progress Bar (Enlarges relatively on hover / click / scroll) -->
   <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
@@ -136,6 +162,14 @@
         <span>FAQ</span>
         <span class="menu-item-dot" aria-hidden="true"></span>
       </a>
+      <a href="/privacy" class="mobile-menu-item">
+        <span>Privacy Policy</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
+      <a href="/terms" class="mobile-menu-item">
+        <span>Terms of Service</span>
+        <span class="menu-item-dot" aria-hidden="true"></span>
+      </a>
     </div>
     <div class="mobile-menu-divider"></div>
     <div class="mobile-menu-footer">
@@ -146,7 +180,7 @@
     </div>
   </div>
 
-  <main>
+  <main id="main">
     <!-- =========================================================================
          2. Hero Section
          ========================================================================= -->
@@ -1268,6 +1302,8 @@
           <a href="#screenshots" class="footer-link">Showcase</a>
           <a href="#architecture" class="footer-link">Architecture</a>
           <a href="#api" class="footer-link">API Reference</a>
+          <a href="/privacy" class="footer-link">Privacy Policy</a>
+          <a href="/terms" class="footer-link">Terms of Service</a>
           <a href="https://github.com/abhayv175/PrintPulse" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
         </div>
       </div>
